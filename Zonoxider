@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { background: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; font-family: sans-serif; text-align: center; }
+.glitch-active { animation: shake 0.1s infinite; filter: hue-rotate(90deg) invert(1); }
+@keyframes shake {
+  0% { transform: translate(5px, 5px) skew(5deg); }
+  20% { transform: translate(-5px, -5px) skew(-5deg); }
+  40% { transform: translate(3px, -3px) skew(2deg); }
+  60% { transform: translate(-3px, 3px) skew(-2deg); }
+  80% { transform: translate(5px, -5px) skew(0deg); }
+  100% { transform: translate(-5px, 5px) skew(1deg); }
+}
+</style>
+</head>
+<body>
+<script>
+setTimeout(function() {
+  var r = confirm("DO NOT CLICK YES \n\nVuoi attivare l'effetto?");
+  if (r == true) {
+    document.body.classList.add("glitch-active");
+    document.body.innerHTML = "<h1>ZONOXIDE GDI EFFECT ACTIVATED</h1>";
+    setTimeout(function() {
+      document.body.classList.remove("glitch-active");
+      document.body.innerHTML = "<h1>Effetto Terminato</h1>";
+    }, 5000);
+  } else {
+    document.body.innerHTML = "<h1>Hai cliccato No.</h1>";
+  }
+}, 500);
+</script>
+</body>
+</html>
